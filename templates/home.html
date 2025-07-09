@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IndorePlants</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <!-- ✅ Navbar -->
+  <nav class="navbar">
+    <div class="logo">IndorePlants.</div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="{{ url_for('cart') }}">Cart</a>
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('register') }}">Register</a>
+    </div>
+  </nav>
+
+  <!-- ✅ Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1><span>Plants</span> make a positive <span>impact</span> on your environment</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit veritatis aut explicabo voluptatem ullam itaque tenetur numquam!</p>
+      <a href="#popular" class="btn">Shop Now</a>
+    </div>
+    <div class="hero-image">
+      <img src="{{ url_for('static', filename='images/hero.webp') }}" alt="Hero Plant">
+    </div>
+  </section>
+
+  <!-- ✅ Features (face cards) -->
+  <section class="features">
+  <div class="feature-card">
+    <img src="{{ url_for('static', filename='images/delivery.png') }}" alt="Fast Delivery">
+    <h4>Fast Delivery</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, facere debitis omnis.</p>
+  </div>
+  <div class="feature-card">
+    <img src="{{ url_for('static', filename='images/service.png') }}" alt="Great Customer Service">
+    <h4>Great Customer Service</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, facere debitis omnis.</p>
+  </div>
+  <div class="feature-card">
+    <img src="{{ url_for('static', filename='images/ogplant.png') }}" alt="Original Plants">
+    <h4>Original Plants</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, facere debitis omnis.</p>
+  </div>
+  <div class="feature-card">
+    <img src="{{ url_for('static', filename='images/price.png') }}" alt="Affordable Price">
+    <h4>Affordable Price</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, facere debitis omnis.</p>
+  </div>
+</section>
+
+   
+<section class="about-section">
+  <h2>About Us</h2>
+  <p class="subtitle">Follow instructions for success</p>
+
+  <div class="about-row">
+    <div class="about-img">
+      <img src="{{ url_for('static', filename='images/plant1.jpg') }}" alt="Plant">
+    </div>
+    <div class="about-text">
+      <h3>Make your <span>organic</span> garden</h3>
+      <p>Discover the joy of creating a lush green haven right at home. Our mission is to help you grow healthy, sustainable plants that bring life and freshness into your surroundings.</p>
+    </div>
+  </div>
+
+  <div class="about-row reverse">
+    <div class="about-img">
+      <img src="{{ url_for('static', filename='images/plant2.jpg') }}" alt="Plant">
+    </div>
+    <div class="about-text">
+      <h3>Come with us <span>grow up</span> your plant</h3>
+      <p>Join our community of passionate plant lovers and watch your garden flourish. We provide you with quality plants, expert tips, and all the support you need to nurture nature indoors and out.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- ✅ Popular Plants -->
+  <section id="popular" class="popular">
+    <h2>Popular Plants</h2>
+    <div class="product-grid">
+      {% for plant in products %}
+      <div class="product-card">
+        <img src="{{ plant.image_url }}" alt="{{ plant.name }}">
+        <h3>{{ plant.name }}</h3>
+        <p>₹{{ plant.price }}</p>
+        <a href="{{ url_for('add_to_cart', product_id=plant.id) }}" class="cart-btn">🛒</a>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- ✅ Footer -->
+<footer class="footer">
+  <div class="footer-line"></div>
+  <div class="footer-container">
+    <div class="footer-left">
+      <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="IndorePlants Logo" />
+      <h2>IndorePlants.</h2>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#"><i class="bi bi-facebook"></i></a>
+      <a href="#"><i class="bi bi-twitter-x"></i></a>
+      <a href="#"><i class="bi bi-instagram"></i></a>
+      <a href="#"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Quick Link</h4>
+        <ul>
+          <li><a href="#">Plants</a></li>
+          <li><a href="#">Flowers</a></li>
+          <li><a href="#">Gardening</a></li>
+          <li><a href="#">Seeds</a></li>
+          <li><a href="#">Shipping</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Popular Services</h4>
+        <ul>
+          <li><a href="#">Tree Planting</a></li>
+          <li><a href="#">Grass Cutting</a></li>
+          <li><a href="#">Weeds Control</a></li>
+          <li><a href="#">Project</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>8856969013</li>
+          <li>indoorplants@gmail.com</li>
+          <li>Sai park,Sai siddha colony,Dighi hills,Pune-411015, <br>Maharashtra, INDIA</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cart | IndorePlants</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    body {
+      background: #0c3b2e;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    .cart-container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #fff;
+      color: #1d4636;
+      padding: 40px;
+      border-radius: 10px;
+    }
+    .cart-item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      padding: 20px 0;
+    }
+    .cart-item img {
+      width: 100px;
+      height: auto;
+      margin-right: 20px;
+      border-radius: 8px;
+    }
+    .cart-item h4 {
+      flex: 1;
+    }
+    .cart-item .price {
+      font-weight: bold;
+    }
+    .cart-item a {
+      color: #c0392b;
+      text-decoration: underline;
+      margin-left: 20px;
+    }
+    .cart-empty {
+      text-align: center;
+      padding: 50px 0;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="cart-container">
+    <h2>Your Cart</h2>
+    {% if cart %}
+      {% for item in cart %}
+      <div class="cart-item">
+        <img src="{{ item.image_url }}" alt="{{ item.name }}">
+        <h4>{{ item.name }}</h4>
+        <p class="price">Rs.{{ item.price }}</p>
+        <a href="{{ url_for('remove_from_cart', index=loop.index0) }}">Remove</a>
+      </div>
+      {% endfor %}
+    {% else %}
+      <div class="cart-empty">Your cart is empty.</div>
+    {% endif %}
+  </div>
+</body>
+</html>

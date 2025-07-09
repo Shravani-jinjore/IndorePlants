@@ -1,0 +1,282 @@
+/* Global */
+body {
+  background: #033d1c;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #022b12;
+  padding: 20px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 50px;
+  background: #044422;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.hero-text span {
+  color: #86efac;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: #86efac;
+  color: #033d1c;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.hero-image img {
+  max-width: 500px;
+  border-radius: 10px;
+  transition: transform 5s ease;
+}
+
+body.loaded .hero-image img {
+  transform: scale(1.1);
+}
+
+/* Features */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  background: #033d1c;
+  padding: 60px 50px;
+}
+
+.feature-card {
+  text-align: center;
+  background: #044422;
+  padding: 30px 20px;
+  border-radius: 8px;
+}
+
+.feature-card img {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.feature-card h4 {
+  margin-bottom: 10px;
+}
+
+/* Product Grid */
+.popular {
+  padding: 60px 50px;
+}
+
+.popular h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background: #044422;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  margin: 15px 0 10px 0;
+}
+
+.product-card p {
+  margin-bottom: 10px;
+}
+
+.cart-btn {
+  background: #86efac;
+  color: #033d1c;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* About */
+.about-section {
+  padding: 80px 50px;
+  background: #033d1c;
+}
+
+.about-section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.about-section .subtitle {
+  text-align: center;
+  color: #86efac;
+  margin-bottom: 50px;
+}
+
+.about-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.about-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-img img {
+  width: 400px;
+  border-radius: 10px;
+}
+
+.about-text {
+  max-width: 50%;
+}
+
+.about-text h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about-text span {
+  color: #86efac;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+  background: #f5f0d9;
+  color: #1d4636;
+  padding: 50px 80px;
+}
+
+.footer-line {
+  border-top: 1px solid #65a30d;
+  margin-bottom: 30px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-left img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.footer-socials a {
+  margin-right: 10px;
+  color: #1d4636;
+  font-size: 20px;
+}
+
+.footer-columns {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.footer-column h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #1d4636;
+}
+
+.footer-column ul li a:hover {
+  color: #65a30d;
+}
